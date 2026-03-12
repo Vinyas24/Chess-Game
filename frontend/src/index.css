@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #0f172a; /* slate-900 */
+    --foreground: #f8fafc; /* slate-50 */
+    --glass-bg: rgba(30, 41, 59, 0.7); /* slate-800 with opacity */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    --board-light: #e2e8f0; /* slate-200 */
+    --board-dark: #64748b; /* slate-500 */
+    --highlight: rgba(234, 179, 8, 0.5); /* yellow-500 with opacity */
+    --check-highlight: rgba(239, 68, 68, 0.8); /* red-500 */
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] rounded-2xl shadow-xl;
+  }
+
+  .square-light {
+    background-color: var(--board-light);
+  }
+
+  .square-dark {
+    background-color: var(--board-dark);
+  }
+
+  .square-highlight {
+    background-color: var(--highlight) !important;
+  }
+
+  .square-check {
+    background-color: var(--check-highlight) !important;
+  }
+}
