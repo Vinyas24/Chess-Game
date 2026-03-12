@@ -3,7 +3,7 @@ import Confetti from 'react-confetti'
 import ChessBoard from './components/ChessBoard'
 import { RefreshCw, Swords } from 'lucide-react'
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://chess-game-5l3v.onrender.com';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://chess-game-8x4p.onrender.com';
 
 function App() {
   const [gameState, setGameState] = useState(null)

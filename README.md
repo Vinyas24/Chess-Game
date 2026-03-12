@@ -22,7 +22,7 @@ The project is split into two distinct tiers:
 1. **`backend/` - Spring Boot (Java 17+)**
    - Originally a terminal-based monolithic Java engine, refactored into a stateless REST API via `GameController`.
    - Manages games in a concurrent HashMap, storing state via UUIDs.
-   - Live Deployed on: **[Render](https://chess-game-5l3v.onrender.com/)**
+   - Live Deployed on: **[Render](https://chess-game-8x4p.onrender.com/)**
 
 2. **`frontend/` - Vite + React**
    - High-performance UI rendering the board state provided by the backend.
