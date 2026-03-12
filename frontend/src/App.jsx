@@ -3,6 +3,8 @@ import Confetti from 'react-confetti'
 import ChessBoard from './components/ChessBoard'
 import { RefreshCw, Swords } from 'lucide-react'
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://chess-game-5l3v.onrender.com';
+
 function App() {
   const [gameState, setGameState] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -25,7 +27,7 @@ function App() {
     if (gameState.sideToMove !== playerColor) {
       const fetchAiMove = async () => {
         try {
-          const res = await fetch('/api/chess/ai-move', {
+          const res = await fetch(`${API_BASE_URL}/api/chess/ai-move`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ gameId: gameState.gameId })
@@ -46,7 +48,7 @@ function App() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch('/api/chess/new', { method: 'POST' })
+      const res = await fetch(`${API_BASE_URL}/api/chess/new`, { method: 'POST' })
       if (!res.ok) throw new Error('Failed to start a new game')
       const data = await res.json()
       setGameState(data)
@@ -60,7 +62,7 @@ function App() {
 
   const fetchState = async (gameId) => {
     try {
-      const res = await fetch(`/api/chess/state?gameId=${gameId}`)
+      const res = await fetch(`${API_BASE_URL}/api/chess/state?gameId=${gameId}`)
       if (!res.ok) throw new Error('Game not found')
       const data = await res.json()
       setGameState(data)
@@ -86,7 +88,7 @@ function App() {
 
   const handleMove = async (from, to, promotion = null) => {
     try {
-      const res = await fetch('/api/chess/move', {
+      const res = await fetch(`${API_BASE_URL}/api/chess/move`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ gameId: gameState.gameId, from, to, promotion })
