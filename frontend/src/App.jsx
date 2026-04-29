@@ -125,7 +125,7 @@ function App() {
               <Swords className="text-blue-400 w-16 h-16 drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]"/>
             </div>
             <h1 className="text-5xl font-extrabold pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-              Premium Chess
+              Chess♟️
             </h1>
             <p className="text-slate-400">Select a game mode to begin</p>
             
@@ -139,19 +139,19 @@ function App() {
               
               <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-600 to-transparent my-2"></div>
               
-              <h3 className="text-slate-300 font-bold">Play vs Artificial Intelligence</h3>
+              <h3 className="text-slate-300 font-bold">Play with AI</h3>
               <div className="flex gap-4">
                 <button 
                   onClick={() => startGame('pve', 'WHITE')}
                   className="flex-1 py-4 bg-slate-200 hover:bg-white text-slate-900 border border-slate-300 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-lg"
                 >
-                  Play White ♙
+                  Play as White ♙
                 </button>
                 <button 
                   onClick={() => startGame('pve', 'BLACK')}
                   className="flex-1 py-4 bg-slate-900 hover:bg-black border border-slate-700 rounded-xl font-bold text-lg text-white transition-all hover:scale-105 shadow-lg"
                 >
-                  Play Black ♟
+                  Play as Black ♟
                 </button>
               </div>
             </div>
@@ -195,7 +195,7 @@ function App() {
             <Swords className="text-blue-400 w-8 h-8"/>
             <div>
               <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                Premium Chess
+                Chess ♟️
               </h1>
               <p className="text-slate-400 text-sm font-medium tracking-wide">
                 {gameMode === 'pvp' ? 'Pass and Play Mode' : `vs AI (Playing as ${playerColor})`}
